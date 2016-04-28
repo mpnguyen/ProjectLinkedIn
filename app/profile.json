@@ -1,0 +1,47 @@
+{
+    "id": "profile", 
+    "imageUrl": "avatar.jpg", 
+    "name": "Nguyen Minh Phu", 
+    "job": "Web Dev",
+    "country": "VietNam",
+    "company": "Somotsoft",
+    "current": "Ho Chi Minh city", 
+    "previous": "Binh Duong",
+    "education": "University of Science",
+    "specialist": "Software Engineering",
+    "summary": "Microsoft Windows XP, Windows 7, Windows 8/8.1, Windows 10. Using several development systems of Microsoft Windows as Visual Studio 2013, Visual Studio 2015. Good knowledge of Microsoft languages and technologies such as: C#, C/C++, XAML, Windows Form, WPF, Universal Windows Platform.  Good knowledge of HTML, CSS, XML",
+    "experience": "Web developer with two year experience",
+    "projects":"Money Saver, Web Travel...",
+    "skills": 
+    [
+        {
+            "skillname":"C#",
+            "percent":"73+"
+        },
+        {
+            "skillname":"Html",
+            "percent":"80+"
+        },
+        {
+            "skillname":"Css",
+            "percent":"78"
+        },
+        {
+            "skillname":"Javascript",
+            "percent":"70+"
+        }
+    ],
+    "others":
+    [
+        {
+            "skillname":"C++",
+            "percent":"60"
+        },
+        {
+            "skillname":"Java",
+            "percent":"65"
+        }
+    ],
+    "year": "2013-2017",
+    "imageSchool":"hcmus.jpg"
+}

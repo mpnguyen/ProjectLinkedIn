@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Project Linked In</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body ng-controller="LinkedInCtrl">
+
+  <div class="info">
+		<div class="image">
+			<img ng-src = "img/{{profile.imageUrl}}" alt="Avatar">
+		</div>
+		<div class="profile">
+			<div class="basic">
+				<h3 class="profile-name">{{profile.name}}</h3>
+				<p class="sub-profile">{{profile.job}} at {{profile.company}}</p>
+				 <p><a>{{profile.country}} </a> | <a>{{profile.job}}</a></p>
+			</div>
+			<div class="extra">
+				<div class="extra1">
+					<p>Current</p>
+					<p>Previous</p>
+					<p>Education</p>
+				</div>
+				<div class="extra2">
+					<p>{{profile.current}}</p>
+					<p>{{profile.previous}}</p>
+					<p>{{profile.education}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="backgr">
+		<div class="header">
+			<p>Background</p>
+		</div>
+		 <div class="frame">
+			<div class="title-frame">
+				<div class="icon">
+					<img src="img/summary.png"/>
+				</div>
+				<div class="content">
+		     			<p>Summary</p>
+				</div>
+			</div>
+			<div class="description">
+                <p>{{profile.summary}}</p>
+			<hr>
+			</div>
+		</div>
+		 
+		 <div class="frame">
+		     <div class="title-frame">
+				<div class="icon">
+					<img src="img/experience.png">
+				</div>
+				<div class="content">
+		     			<p>Experience</p>
+				</div>
+			</div>
+			<div class="description">
+                <p>{{profile.experience}}</p>
+			<hr>
+			</div>
+        </div>
+        <div class="frame">
+			<div class="title-frame">
+				<div class="icon">
+					<img src="img/project.png"/>
+				</div>
+				<div class="content">
+		     	    <p>Project</p>
+				</div>
+            </div>
+                <div class="description">
+                <p>{{profile.projects}}</p>
+			     <hr>
+                </div>
+		</div>
+		<div class="frame">
+			<div class="title-frame">
+				<div class="icon">
+					<img src="img/skills.png"/>
+				</div>
+				<div class="content">
+		     			<p>Skill</p>
+				</div>
+			</div>
+			<div class="skill">
+				<p>+Top Skills</p>
+                <div ng-repeat="skill in profile.skills">
+				    <span class="score">{{skill.percent}}</span><span class="stuff">{{skill.skillname}}</span></br>
+                </div>
+				<p>+I'm also know about: </p>
+				 <div ng-repeat="other in profile.others">
+				    <span class="score">{{other.percent}}</span><span class="stuff">{{other.skillname}}</span>
+                </div>
+			<hr>
+			</div>
+		</div>
+		<div class="frame">
+			<div class="title-frame">
+				<div class="icon">
+					<img src="img/education.png"/>
+				</div>
+				<div class="content">
+		     			<p>Education</p>
+				</div>
+			</div>
+			<div class="education" >
+				<div class="school">
+                    <h3>{{profile.education}}</h3>
+				    <p>{{profile.specialist}}</p>
+				    <p>{{profile.year}}</p>
+				</div>
+				<div class="logo">
+					<img ng-src = "img/{{profile.imageSchool}}" alt="logo school">
+				</div>
+			</div>
+		</div>
+	</div>	
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="components/version/version.js"></script>
+  <script src="components/version/version-directive.js"></script>
+  <script src="components/version/interpolate-filter.js"></script>
+</body>
+</html>
