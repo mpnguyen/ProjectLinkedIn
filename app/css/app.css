@@ -1,130 +1,154 @@
 /* app css stylesheet */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+html,
 body {
-	background: #455A64;
+    background-color: #455A64;
+    color: #555;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
 }
 
-.info{
-	margin:0 auto;
-	margin-top: 20px;
-	margin-bottom: 12px;
-	width:60%;
-	display:inline-block;
-	display: flex;
-	align-items: top;
-	justify-content: left;
-	background: white;
+hr {
+    margin: 0px 30px 30px 30px;
 }
 
-.info .image img{
-	width: 220px;
-	margin-right: 30px;
-	background: lightgray;
+
+.clearfix {zoom: 1}
+.clearfix:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
 }
 
-.profile-name{
-	font-weight: bold;
+
+.page {
+    width: 70%;
+    margin: 10px auto 10px auto;
 }
 
-.sub-profile{
-	font-size:15pt;
+.profile {
+    background-color: #fff;  
+    display: inline-block;
+    width: 100%;
 }
 
-.more1{
-	
-	display: flex;
-	vertical-align: center;
-	align-items: top;
-	justify-content: left;
+.avatar img {
+    float: left;
+    width: 220px;
+    margin-right: 50px;
 }
 
-.extra>div{
-	line-height: 80%;
-	font-size:10pt;
-	display:inline-block;
+.detail {
+    margin-left: 12px;
 }
 
-.skill{
-	line-height: 400%;
+.detail h1 {
+    color: #000000;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
-.score{
-	font-weight: bold;
-	color: white;
-	background: #1e90ff;
-	padding:10px;
+.detail h2, .detail h5 {
+    color: #666;
+    margin-bottom: 10px;
 }
 
-.stuff{
-	background: lightgray;
-	padding:10px;
+.title-address {
+    width: 80px;
+    float: left;
+    margin-right: 20px;
+    color: #666;
+    font-size: 16px;
 }
 
-.extra1{
-	color: gray;
-	margin-right: 30px;
+.content-address {
+    color: #000000;
+    font-size: 16px;
 }
 
-.extra2{
-	
-}
 
-.backgr{
-	margin:0 auto;
-	width:60%;
-	height:60%;
-	float:center;
+.background {
+    margin: 10px auto;
 	background:white;
 }
 
-.header{
-	width: 20%;
-	height: 35px;
+.title-background {
+    width: 15%;
+	height: 30px;
 	display: flex;
-	font-weight: bold;
     align-items: center;
     justify-content: center;
 	color: white;
-	background: black;
+	background: #333;
 }
 
-.frame{
-	padding: 20px;
+.frame {
+    padding: 30px;
 }
 
-hr{
-    border: none;
-    height: 1px;
-    background-color: #e8e8e8;
+.icon {
+    float: left;
+    margin-right: 20px;
 }
 
-.title-frame{
-	display: flex;
-	vertical-align: center;
-	align-items: top;
-	justify-content: left;
+.title-frame {
+    margin-top: 10px;
 }
 
-.icon{
-	padding-right: 20px;
+.content-frame p {
+    margin-top: 10px;
+    font-size: 15px;
 }
 
-.title > div{
-	display:inline-block;
-	
+.skill {
+    margin: 10px 10px 0px 0px;
+    display: inline-block;
 }
 
-.content{	
-	font-size: 20pt;
+.score {
+    color: white;
+	background: #1e90ff;
+	padding: 3px;
+    font-size: 15px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    float: left;
 }
 
-
-.education > div{
-	
-	display:inline-block;
-	
+.skillname {
+	background: lightgray;
+	padding: 3px;
+    font-size: 15px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    float: left;
 }
 
-.logo{
-	float:right;
+.education {
+    display: inline-block;
+    width: 100%
 }
+
+.education h5 {
+    color: #000000;
+    margin: 20px 0px 5px 0px;;
+    display: inline-block;
+}
+
+.education img {
+    float: right;
+}
+

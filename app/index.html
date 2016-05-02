@@ -16,120 +16,110 @@
 </head>
 <body ng-controller="LinkedInCtrl">
 
-  <div class="info">
-		<div class="image">
-			<img ng-src = "img/{{profile.imageUrl}}" alt="Avatar">
-		</div>
-		<div class="profile">
-			<div class="basic">
-				<h3 class="profile-name">{{profile.name}}</h3>
-				<p class="sub-profile">{{profile.job}} at {{profile.company}}</p>
-				 <p><a>{{profile.country}} </a> | <a>{{profile.job}}</a></p>
-			</div>
-			<div class="extra">
-				<div class="extra1">
-					<p>Current</p>
-					<p>Previous</p>
-					<p>Education</p>
-				</div>
-				<div class="extra2">
-					<p>{{profile.current}}</p>
-					<p>{{profile.previous}}</p>
-					<p>{{profile.education}}</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<div class="backgr">
-		<div class="header">
-			<p>Background</p>
-		</div>
-		 <div class="frame">
-			<div class="title-frame">
-				<div class="icon">
-					<img src="img/summary.png"/>
-				</div>
-				<div class="content">
-		     			<p>Summary</p>
-				</div>
-			</div>
-			<div class="description">
-                <p>{{profile.summary}}</p>
-			<hr>
-			</div>
-		</div>
-		 
-		 <div class="frame">
-		     <div class="title-frame">
-				<div class="icon">
-					<img src="img/experience.png">
-				</div>
-				<div class="content">
-		     			<p>Experience</p>
-				</div>
-			</div>
-			<div class="description">
-                <p>{{profile.experience}}</p>
-			<hr>
-			</div>
-        </div>
-        <div class="frame">
-			<div class="title-frame">
-				<div class="icon">
-					<img src="img/project.png"/>
-				</div>
-				<div class="content">
-		     	    <p>Project</p>
-				</div>
+  <div class="page">
+        <div class="profile">
+            <div class="avatar">
+                <img ng-src="img/{{profile.imageUrl}}" alt="avatar.jpg">
             </div>
-                <div class="description">
-                <p>{{profile.projects}}</p>
-			     <hr>
+            <div class="detail">
+                <h1>{{profile.name}}</h1>
+                <h3>{{profile.job}} at {{profile.company}}</h3>
+                <h5><a href="#">{{profile.country}}</a> | <a href="#">{{profile.job}}</a></h5>
+            
+                <div class="address">
+                    <div class="title-address">Current</div>    
+                    <div class="content-address">{{profile.current}}</div>    
+                    <div class="title-address">Previous</div>    
+                    <div class="content-address">{{profile.previous}}</div>    
+                    <div class="title-address">Education</div>    
+                    <div class="content-address">{{profile.education}}</div>    
                 </div>
-		</div>
-		<div class="frame">
-			<div class="title-frame">
-				<div class="icon">
-					<img src="img/skills.png"/>
-				</div>
-				<div class="content">
-		     			<p>Skill</p>
-				</div>
-			</div>
-			<div class="skill">
-				<p>+Top Skills</p>
-                <div ng-repeat="skill in profile.skills">
-				    <span class="score">{{skill.percent}}</span><span class="stuff">{{skill.skillname}}</span></br>
+            </div>
+        </div>
+        <div class="background">
+            <div class="title-background"><h6>Background</h6></div>
+            <div class="frame">
+                <div class="icon">
+                    <img src="img/summary.png" alt="summary.png">
                 </div>
-				<p>+I'm also know about: </p>
-				 <div ng-repeat="other in profile.others">
-				    <span class="score">{{other.percent}}</span><span class="stuff">{{other.skillname}}</span>
+                <div class="title-frame">
+                    <h4>Summary</h4>
                 </div>
-			<hr>
-			</div>
-		</div>
-		<div class="frame">
-			<div class="title-frame">
-				<div class="icon">
-					<img src="img/education.png"/>
-				</div>
-				<div class="content">
-		     			<p>Education</p>
-				</div>
-			</div>
-			<div class="education" >
-				<div class="school">
-                    <h3>{{profile.education}}</h3>
-				    <p>{{profile.specialist}}</p>
-				    <p>{{profile.year}}</p>
-				</div>
-				<div class="logo">
-					<img ng-src = "img/{{profile.imageSchool}}" alt="logo school">
-				</div>
-			</div>
-		</div>
-	</div>	
+                <div class="clearfix"></div>
+                <div class="content-frame">
+                    <p>{{profile.summary}}</p>
+                </div>
+            </div>
+            <hr>
+            <div class="frame">
+                <div class="icon">
+                    <img src="img/experience.png" alt="experience.png">
+                </div>
+                <div class="title-frame">
+                    <h4>Experience</h4>
+                </div>
+                <div class="clearfix"></div>
+                <div class="content-frame">
+                    <p>{{profile.experience}}</p>
+                </div>
+            </div>
+            <hr>
+            <div class="frame">
+                <div class="icon">
+                    <img src="img/project.png" alt="experience.png">
+                </div>
+                <div class="title-frame">
+                    <h4>Project</h4>
+                </div>
+                <div class="clearfix"></div>
+                <div class="content-frame">
+                    <p>{{profile.projects}}</p>
+                </div>
+            </div>
+            <hr>
+            <div class="frame">
+                <div class="icon">
+                    <img src="img/skills.png" alt="experience.png">
+                </div>
+                <div class="title-frame">
+                    <h4>Skill</h4>
+                </div>
+                <div class="clearfix"></div>
+                <div class="content-frame">
+                    <p>Top Skills</p>
+                    <div ng-repeat="skill in profile.skills">
+                        <div class="skill">
+                            <span class="score">{{skill.score}}</span>
+                            <span class="skillname">{{skill.skillname}}</span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <p>Jeff also knows about...</p>
+                    <div class="skill" ng-repeat="other in profile.others">
+                        <span class="score">50</span><span class="skillname">.Net</span>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="frame">
+                <div class="icon">
+                    <img src="img/education.png" alt="education.png">
+                </div>
+                <div class="title-frame">
+                    <h4>Education</h4>
+                </div>
+                <div class="clearfix"></div>
+                <div class="content-frame">
+                    <div class="education">
+                        <img ng-src="img/{{profile.imageSchool}}"> 
+                        <h5>{{profile.education}}</h5>
+                        <h6>{{profile.specialist}}</h6>
+                        <h6>{{profile.year}}</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>

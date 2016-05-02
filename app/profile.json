@@ -16,30 +16,30 @@
     [
         {
             "skillname":"C#",
-            "percent":"73+"
+            "score":"73+"
         },
         {
             "skillname":"Html",
-            "percent":"80+"
+            "score":"80+"
         },
         {
             "skillname":"Css",
-            "percent":"78"
+            "score":"78"
         },
         {
             "skillname":"Javascript",
-            "percent":"70+"
+            "score":"70+"
         }
     ],
     "others":
     [
         {
             "skillname":"C++",
-            "percent":"60"
+            "score":"60"
         },
         {
             "skillname":"Java",
-            "percent":"65"
+            "score":"65"
         }
     ],
     "year": "2013-2017",
