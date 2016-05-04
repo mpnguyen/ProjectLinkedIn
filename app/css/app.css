@@ -59,11 +59,13 @@ hr {
     color: #000000;
     margin-top: 20px;
     margin-bottom: 10px;
+    display: inline-block;
 }
 
-.detail h2, .detail h5 {
+.detail h3, .detail h5 {
     color: #666;
     margin-bottom: 10px;
+    display: inline-block;
 }
 
 .title-address {
@@ -106,6 +108,7 @@ hr {
 
 .title-frame {
     margin-top: 10px;
+    display: inline-block;
 }
 
 .content-frame p {
@@ -152,3 +155,31 @@ hr {
     float: right;
 }
 
+i {
+    font-size: 15px;
+    padding-left: 15px;
+}
+
+i:hover {
+    color: #000000;
+}
+
+.content-data {
+    display: block;
+}
+
+.input-score {
+    background: #1e90ff;
+    color: #fff;
+    text-align: center;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+    border: 0px;
+}
+
+.input-skill {
+    border: 0px;
+    background: #E0E0E0;
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+}

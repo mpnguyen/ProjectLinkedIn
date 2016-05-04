@@ -4,28 +4,97 @@
 <!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Project Linked In</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-  <link rel="stylesheet" href="css/app.css">
-  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Project Linked In</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+    
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/app.css">
 </head>
 <body ng-controller="LinkedInCtrl">
 
-  <div class="page">
+    <div class="page">
         <div class="profile">
             <div class="avatar">
                 <img ng-src="img/{{profile.imageUrl}}" alt="avatar.jpg">
             </div>
             <div class="detail">
-                <h1>{{profile.name}}</h1>
-                <h3>{{profile.job}} at {{profile.company}}</h3>
+                <div class="content-data">
+                    <h1>{{profile.name}}</h1>
+                    <i class="glyphicon glyphicon-edit" data-toggle="modal" data-target="#modalName"></i>
+                    <div id="modalName" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h2 class="modal-title">Edit Name</h2>
+                                </div>
+                                <div class="modal-body">
+                                    <label for="fullname">Fullname</label>
+                                    <input ng-model="profile.name" id="fullname" class="form-control" type="text">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="content-data">
+                    <h3>{{profile.job}} at {{profile.company}}</h3>
+                    <i class="glyphicon glyphicon-edit" data-toggle="modal" data-target="#modalJob"></i>
+                    <div id="modalJob" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h2 class="modal-title">Edit job</h2>
+                                </div>
+                                <div class="modal-body">
+                                    <label for="job">Job</label>
+                                    <input ng-model="profile.job" id="job" class="form-control" type="text">
+                                    <label for="company">Company</label>
+                                    <input ng-model="profile.company" id="company" class="form-control" type="text">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <h5><a href="#">{{profile.country}}</a> | <a href="#">{{profile.job}}</a></h5>
-            
+                <i class="glyphicon glyphicon-edit" data-toggle="modal" data-target="#modalAddress"></i>
+                    <div id="modalAddress" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h2 class="modal-title">Edit address</h2>
+                                </div>
+                                <div class="modal-body">
+                                    <label for="country">Country</label>
+                                    <input ng-model="profile.country" id="country" class="form-control" type="text">
+                                    <label for="current">Current</label>
+                                    <input ng-model="profile.current" id="current" class="form-control" type="text">
+                                    <label for="previous">Previous</label>
+                                    <input ng-model="profile.previous" id="previous" class="form-control" type="text">
+                                    <label for="education">Education</label>
+                                    <input ng-model="profile.education" id="education" class="form-control" type="text">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 <div class="address">
                     <div class="title-address">Current</div>    
                     <div class="content-address">{{profile.current}}</div>    
@@ -45,6 +114,24 @@
                 <div class="title-frame">
                     <h4>Summary</h4>
                 </div>
+                <i class="glyphicon glyphicon-edit" data-toggle="modal" data-target="#modalSummary"></i>
+                <div id="modalSummary" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h2 class="modal-title">Edit Summary</h2>
+                            </div>
+                            <div class="modal-body">
+                                <label for="summary">Summary</label>
+                                <textarea ng-model="profile.summary" id="summary" class="form-control" rows="5"></textarea>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="clearfix"></div>
                 <div class="content-frame">
                     <p>{{profile.summary}}</p>
@@ -57,6 +144,24 @@
                 </div>
                 <div class="title-frame">
                     <h4>Experience</h4>
+                </div>
+                <i class="glyphicon glyphicon-edit" data-toggle="modal" data-target="#modalExperience"></i>
+                <div id="modalExperience" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h2 class="modal-title">Edit Experience</h2>
+                            </div>
+                            <div class="modal-body">
+                                <label for="experience">Experience</label>
+                                <textarea ng-model="profile.experience" id="experience" class="form-control" rows="5"></textarea>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="clearfix"></div>
                 <div class="content-frame">
@@ -71,6 +176,24 @@
                 <div class="title-frame">
                     <h4>Project</h4>
                 </div>
+                <i class="glyphicon glyphicon-edit" data-toggle="modal" data-target="#modalProject"></i>
+                <div id="modalProject" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h2 class="modal-title">Edit Project</h2>
+                            </div>
+                            <div class="modal-body">
+                                <label for="projects">Project</label>
+                                <textarea ng-model="profile.projects" id="projects" class="form-control" rows="5"></textarea>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="clearfix"></div>
                 <div class="content-frame">
                     <p>{{profile.projects}}</p>
@@ -83,6 +206,31 @@
                 </div>
                 <div class="title-frame">
                     <h4>Skill</h4>
+                </div>
+                <i class="glyphicon glyphicon-edit" data-toggle="modal" data-target="#modalSkill"></i>
+                <div id="modalSkill" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h2 class="modal-title">Edit Skill</h2>
+                            </div>
+                            <div class="modal-body">
+                                <label for="projects">Skill</label>
+                                <div ng-repeat="skill in profile.skills">
+                                    <div class="skill row">
+                                        <input class="input-score col-md-2" type="text" value="{{skill.score}}">
+                                        <input class="input-skill col-md-8" type="text" value="{{skill.skillname}}">
+                                        <i class="glyphicon glyphicon-remove"></i>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="clearfix"></div>
                 <div class="content-frame">
@@ -108,6 +256,29 @@
                 <div class="title-frame">
                     <h4>Education</h4>
                 </div>
+                <i class="glyphicon glyphicon-edit" data-toggle="modal" data-target="#modalEducation"></i>
+                <div id="modalEducation" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h2 class="modal-title">Edit Education</h2>
+                            </div>
+                            <div class="modal-body">
+                                <label for="education">Education</label>
+                                <Input ng-model="profile.education" id="projects" class="form-control">
+                                <label for="specialist">Specialist</label>
+                                <Input ng-model="profile.specialist" id="specialist" class="form-control">
+                                <label for="year">Year</label>
+                                <Input ng-model="profile.year" id="year" class="form-control">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="clearfix"></div>
                 <div class="content-frame">
                     <div class="education">
@@ -121,15 +292,17 @@
         </div>
     </div>
 
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="js/app.js"></script>
-  <script src="js/controllers.js"></script>
-  <script src="components/version/version.js"></script>
-  <script src="components/version/version-directive.js"></script>
-  <script src="components/version/interpolate-filter.js"></script>
+    <!-- In production use:
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+    -->
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="components/version/version.js"></script>
+    <script src="components/version/version-directive.js"></script>
+    <script src="components/version/interpolate-filter.js"></script>
+    <script src="bower_components/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
