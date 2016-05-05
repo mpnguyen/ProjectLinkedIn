@@ -29,6 +29,10 @@
         {
             "skillname":"Javascript",
             "score":"70+"
+        },
+        {
+            "skillname":"Python",
+            "score":"79"
         }
     ],
     "others":

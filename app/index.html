@@ -207,34 +207,36 @@
                 <div class="title-frame">
                     <h4>Skill</h4>
                 </div>
-                <i class="glyphicon glyphicon-edit" data-toggle="modal" data-target="#modalSkill"></i>
-                <div id="modalSkill" class="modal fade" role="dialog">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h2 class="modal-title">Edit Skill</h2>
-                            </div>
-                            <div class="modal-body">
-                                <label for="projects">Skill</label>
-                                <div ng-repeat="skill in profile.skills">
-                                    <div class="skill row">
-                                        <input class="input-score col-md-2" type="text" value="{{skill.score}}">
-                                        <input class="input-skill col-md-8" type="text" value="{{skill.skillname}}">
-                                        <i class="glyphicon glyphicon-remove"></i>
-                                    </div>
-                                    <div class="clearfix"></div>
+                
+                <div class="clearfix"></div>
+                <div class="content-frame">
+                    <p class="title-skill">Top Skills</p>
+                    <i class="glyphicon glyphicon-edit" data-toggle="modal" data-target="#modalSkill"></i>
+                    <div id="modalSkill" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h2 class="modal-title">Edit Top Skills</h2>
                                 </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <div class="modal-body">
+                                    <label for="projects">Skills</label>
+                                    <div ng-repeat="skill in profile.skills">
+                                        <div class="skill row">
+                                            <input class="input-score col-md-2" type="text" ng-model="skill.score" placeholder="..">
+                                            <input class="input-skill col-md-8" type="text" ng-model="skill.skillname" placeholder="Skillname...">
+                                            <i class="glyphicon glyphicon-remove" ng-click="deleteSkill(skill)"></i>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="btn btn-danger btn-add" ng-click="addNewSkill()">Add new skill</div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="clearfix"></div>
-                <div class="content-frame">
-                    <p>Top Skills</p>
                     <div ng-repeat="skill in profile.skills">
                         <div class="skill">
                             <span class="score">{{skill.score}}</span>
@@ -242,9 +244,37 @@
                         </div>
                         <div class="clearfix"></div>
                     </div>
-                    <p>Jeff also knows about...</p>
+                    <p class="title-skill">Jeff also knows about...</p>
+                    <i class="glyphicon glyphicon-edit" data-toggle="modal" data-target="#modalOther"></i>
+                    <div id="modalOther" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h2 class="modal-title">Edit Other Skills</h2>
+                                </div>
+                                <div class="modal-body">
+                                    <label for="projects">Other skills</label>
+                                    <div ng-repeat="skill in profile.others">
+                                        <div class="skill row">
+                                            <input class="input-score col-md-2" type="text" ng-model="skill.score" placeholder="..">
+                                            <input class="input-skill col-md-8" type="text" ng-model="skill.skillname" placeholder="Skillname...">
+                                            <i class="glyphicon glyphicon-remove" ng-click="deleteOtherSkill(skill)"></i>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="btn btn-danger btn-add" ng-click="addNewOtherSkill()">Add new skill</div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
                     <div class="skill" ng-repeat="other in profile.others">
-                        <span class="score">50</span><span class="skillname">.Net</span>
+                        <span class="score">{{other.score}}</span>
+                        <span class="skillname">{{other.skillname}}</span>
                     </div>
                 </div>
             </div>
