@@ -158,10 +158,12 @@ hr {
 i {
     font-size: 15px;
     padding-left: 15px;
+    transition: all 0.5s ease;
 }
 
 i:hover {
     color: #000000;
+    transform: scale(1.1);
 }
 
 .content-data {
@@ -188,6 +190,16 @@ i:hover {
     margin-top: 20px;
 }
 
+.btn-edit {
+    float: right;
+    font-size: 40px;
+    margin: 20px;
+}
+
 .title-skill {
     display: inline-block;
+}
+
+.hidden {
+    visibility: hidden;
 }

@@ -35,4 +35,13 @@ linkedInApp.controller('LinkedInCtrl', function ($scope, $http) {
             }
         );
     };
+    
+    $scope.isVisible = "hidden";
+    
+    $scope.editData = function() {
+        if ($scope.isVisible == "")
+            $scope.isVisible = "hidden";
+        else 
+            $scope.isVisible = "";
+    };
 });

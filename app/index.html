@@ -27,7 +27,8 @@
             <div class="detail">
                 <div class="content-data">
                     <h1>{{profile.name}}</h1>
-                    <i class="glyphicon glyphicon-edit" data-toggle="modal" data-target="#modalName"></i>
+                    
+                    <i ng-class="isVisible" class="glyphicon glyphicon-edit" data-toggle="modal" data-target="#modalName"></i>
                     <div id="modalName" class="modal fade" role="dialog">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -38,6 +39,8 @@
                                 <div class="modal-body">
                                     <label for="fullname">Fullname</label>
                                     <input ng-model="profile.name" id="fullname" class="form-control" type="text">
+                                    <label for="avatar">Avatar</label>
+                                    <input ng-model="profile.imageUrl" id="avatar" class="form-control" type="text">
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -45,11 +48,12 @@
                             </div>
                         </div>
                     </div>
+                    <i class="glyphicon glyphicon-wrench btn-edit" ng-click="editData()"></i>
                 </div>
                 
                 <div class="content-data">
                     <h3>{{profile.job}} at {{profile.company}}</h3>
-                    <i class="glyphicon glyphicon-edit" data-toggle="modal" data-target="#modalJob"></i>
+                    <i ng-class="isVisible" class="glyphicon glyphicon-edit" data-toggle="modal" data-target="#modalJob"></i>
                     <div id="modalJob" class="modal fade" role="dialog">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -71,7 +75,7 @@
                     </div>
                 </div>
                 <h5><a href="#">{{profile.country}}</a> | <a href="#">{{profile.job}}</a></h5>
-                <i class="glyphicon glyphicon-edit" data-toggle="modal" data-target="#modalAddress"></i>
+                <i ng-class="isVisible" class="glyphicon glyphicon-edit" data-toggle="modal" data-target="#modalAddress"></i>
                     <div id="modalAddress" class="modal fade" role="dialog">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -114,7 +118,7 @@
                 <div class="title-frame">
                     <h4>Summary</h4>
                 </div>
-                <i class="glyphicon glyphicon-edit" data-toggle="modal" data-target="#modalSummary"></i>
+                <i ng-class="isVisible" class="glyphicon glyphicon-edit" data-toggle="modal" data-target="#modalSummary"></i>
                 <div id="modalSummary" class="modal fade" role="dialog">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -145,7 +149,7 @@
                 <div class="title-frame">
                     <h4>Experience</h4>
                 </div>
-                <i class="glyphicon glyphicon-edit" data-toggle="modal" data-target="#modalExperience"></i>
+                <i ng-class="isVisible" class="glyphicon glyphicon-edit" data-toggle="modal" data-target="#modalExperience"></i>
                 <div id="modalExperience" class="modal fade" role="dialog">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -176,7 +180,7 @@
                 <div class="title-frame">
                     <h4>Project</h4>
                 </div>
-                <i class="glyphicon glyphicon-edit" data-toggle="modal" data-target="#modalProject"></i>
+                <i ng-class="isVisible" class="glyphicon glyphicon-edit" data-toggle="modal" data-target="#modalProject"></i>
                 <div id="modalProject" class="modal fade" role="dialog">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -211,7 +215,7 @@
                 <div class="clearfix"></div>
                 <div class="content-frame">
                     <p class="title-skill">Top Skills</p>
-                    <i class="glyphicon glyphicon-edit" data-toggle="modal" data-target="#modalSkill"></i>
+                    <i ng-class="isVisible" class="glyphicon glyphicon-edit" data-toggle="modal" data-target="#modalSkill"></i>
                     <div id="modalSkill" class="modal fade" role="dialog">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -245,7 +249,7 @@
                         <div class="clearfix"></div>
                     </div>
                     <p class="title-skill">Jeff also knows about...</p>
-                    <i class="glyphicon glyphicon-edit" data-toggle="modal" data-target="#modalOther"></i>
+                    <i ng-class="isVisible" class="glyphicon glyphicon-edit" data-toggle="modal" data-target="#modalOther"></i>
                     <div id="modalOther" class="modal fade" role="dialog">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -286,7 +290,7 @@
                 <div class="title-frame">
                     <h4>Education</h4>
                 </div>
-                <i class="glyphicon glyphicon-edit" data-toggle="modal" data-target="#modalEducation"></i>
+                <i ng-class="isVisible" class="glyphicon glyphicon-edit" data-toggle="modal" data-target="#modalEducation"></i>
                 <div id="modalEducation" class="modal fade" role="dialog">
                     <div class="modal-dialog">
                         <div class="modal-content">
