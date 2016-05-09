@@ -1,12 +1,15 @@
 'use strict';
 
 /* Controllers */
-var linkedInApp = angular.module('myApp', []);
+var linkedInApp = angular.module('LinkedInCtrlCtrl', []);
 
-linkedInApp.controller('LinkedInCtrl', function ($scope, $http) {
-    $http.get('profile.json').success(function(data) {
-        $scope.profile = data;
-    });
+linkedInApp.controller('LinkedInCtrl', function ($scope, $firebaseObject ) {
+    
+    var ref = new Firebase("https://projectlinkedin.firebaseio.com/");
+    
+    var syncObject = $firebaseObject(ref);
+    syncObject.$bindTo($scope, "profile");
+    
     
     $scope.deleteSkill = function(skill) {
         var index = $scope.profile.skills.indexOf(skill);
